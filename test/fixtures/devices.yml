@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: 1
+  brand: MyString
+  model: MyString
+  serial_number: MyString
+
+two:
+  kind: 1
+  brand: MyString
+  model: MyString
+  serial_number: MyString

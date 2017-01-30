@@ -1,0 +1,34 @@
+<h1>Binding Device</h1>
+
+<% if @cases.empty? %>
+    No free computer case for this device
+<% else %>
+    <%= form_for(@device) do |f| %>
+        <% if @device.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(device.errors.count, "error") %> prohibited this device from being saved:</h2>
+
+              <ul>
+                <% @device.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :comp_case %>
+          <%= f.select :comp_case_id, @cases.map { |c| ["#{c.brand} - #{c.model} (#{c.serial_number})", c.id] } %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
+<% end %>
+
+
+
+
+<%= link_to 'Show', @device %> |
+<%= link_to 'Back', devices_path %>

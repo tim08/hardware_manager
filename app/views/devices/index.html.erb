@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Devices</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Kind</th>
+    <th>Brand</th>
+    <th>Model</th>
+    <th>Serial number</th>
+    <th colspan="4"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @devices.each do |device| %>
+      <tr>
+        <td><%= device.kind %></td>
+        <td><%= device.brand %></td>
+        <td><%= device.model %></td>
+        <td><%= device.serial_number %></td>
+        <td><%= link_to 'Show', device %></td>
+        <td><%= link_to 'Edit', edit_device_path(device) %></td>
+        <td><%= link_to 'Destroy', device, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <td><%= render 'bind', device: device %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Device', new_device_path %>

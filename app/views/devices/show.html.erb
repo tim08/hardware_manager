@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @device.kind %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @device.brand %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @device.model %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @device.serial_number %>
+</p>
+
+<% if @device.can_be_bind? %>
+    <p>
+      <strong>Bind comp case:</strong>
+      <%= @device.comp_case %>
+    </p>
+<% end %>
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>
