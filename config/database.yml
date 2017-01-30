@@ -13,8 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: <%= Rails.application.secrets[:db_user] %>
-  password: <%= Rails.application.secrets[:db_password] %>
+  username: hardware_manager_user
   host: localhost
 
 development:
